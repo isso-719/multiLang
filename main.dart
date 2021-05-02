@@ -47,52 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _setTmp(number) {
-    if (_op == "") {
-      _tmp1 = _tmp1 * 10 + number;
-      setState(() {
-        _display = _tmp1.toString();
-        _fixDisplay();
-      });
-    } else {
-      _tmp2 = _tmp2 * 10 + number;
-      setState(() {
-        _display = _tmp2.toString();
-        _fixDisplay();
-      });
-    }
-  }
-
-  void _setOp(oper) {
-    _op = oper;
-    setState(() {
-      _display = _op;
-    });
-  }
-
-  void _calc() {
-    if (_op == "+") {
-      _total = _tmp1 + _tmp2;
-    } else if (_op == "-") {
-      _total = _tmp1 - _tmp2;
-    } else if (_op == "×") {
-      _total = _tmp1 * _tmp2;
-    } else if (_op == "÷") {
-      _total = _tmp1 / _tmp2;
-    } else {
-      _total = _tmp1;
-    }
-
-    setState(() {
-      _display = _total.toString();
-      _fixDisplay();
-    });
-    _tmp1 = _total;
-    _tmp2 = 0;
-    _op = "";
-    _total = 0;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
